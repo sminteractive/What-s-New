@@ -57,4 +57,7 @@ typedef void (^MTZWhatsNewHandler)(NSDictionary *whatsNew);
 ///	Clears the last migration remembered by @c MTZWhatsNew. Causes migration to run from the beginning.
 + (void)reset;
 
++ (void)setLastAppVersion:(NSString *)version;
++ (NSString *)lastAppVersion;
+
 @end
