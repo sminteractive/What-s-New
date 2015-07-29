@@ -56,13 +56,13 @@
 	[self.contentView addSubview:self.textLabel];
 	self.textLabel.translatesAutoresizingMaskIntoConstraints = NO;
 	self.textLabel.textColor = [UIColor whiteColor];
-	self.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Regular" size:20.0f];
+	self.textLabel.font = [UIFont fontWithName:@"Lato-Regular" size:20.0f];
 	
 	self.detailTextLabel = [[UILabel alloc] init];
 	[self.contentView addSubview:self.detailTextLabel];
 	self.detailTextLabel.translatesAutoresizingMaskIntoConstraints = NO;
 	self.detailTextLabel.textColor = [UIColor whiteColor];
-	self.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:14.0f];
+	self.detailTextLabel.font = [UIFont fontWithName:@"Lato-Light" size:14.0f];
 	self.detailTextLabel.numberOfLines = 0;
 	self.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
 

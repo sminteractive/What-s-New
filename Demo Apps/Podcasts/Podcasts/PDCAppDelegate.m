@@ -42,6 +42,48 @@
 		// Customizing the background gradient.
 		vc.backgroundGradientTopColor = [UIColor colorWithHue:0.77 saturation:0.77 brightness:0.76 alpha:1];
 		vc.backgroundGradientBottomColor = [UIColor colorWithHue:0.78 saturation:0.6 brightness:0.95 alpha:1];
+        
+        // Add custom background image
+//        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Saved"]];
+//        imageView.contentMode = UIViewContentModeScaleAspectFill;
+//        [imageView setTranslatesAutoresizingMaskIntoConstraints:false];
+//        [vc.backgroundView addSubview:imageView];
+//        [vc.backgroundView addConstraint:
+//         [NSLayoutConstraint constraintWithItem:imageView
+//                                      attribute:NSLayoutAttributeLeft
+//                                      relatedBy:NSLayoutRelationEqual
+//                                         toItem:vc.backgroundView
+//                                      attribute:NSLayoutAttributeLeft
+//                                     multiplier:1
+//                                       constant:0]];
+//        [vc.backgroundView addConstraint:
+//         [NSLayoutConstraint constraintWithItem:imageView
+//                                      attribute:NSLayoutAttributeTop
+//                                      relatedBy:NSLayoutRelationEqual
+//                                         toItem:vc.backgroundView
+//                                      attribute:NSLayoutAttributeTop
+//                                     multiplier:1
+//                                       constant:0]];
+//        [vc.backgroundView addConstraint:
+//         [NSLayoutConstraint constraintWithItem:imageView
+//                                      attribute:NSLayoutAttributeRight
+//                                      relatedBy:NSLayoutRelationEqual
+//                                         toItem:vc.backgroundView
+//                                      attribute:NSLayoutAttributeRight
+//                                     multiplier:1
+//                                       constant:0]];
+//        [vc.backgroundView addConstraint:
+//         [NSLayoutConstraint constraintWithItem:imageView
+//                                      attribute:NSLayoutAttributeBottom
+//                                      relatedBy:NSLayoutRelationEqual
+//                                         toItem:vc.backgroundView
+//                                      attribute:NSLayoutAttributeBottom
+//                                     multiplier:1
+//                                       constant:0]];
+        
+        vc.view.tintColor = [UIColor whiteColor];
+        vc.dismissButtonBackgroundColor = [UIColor greenColor];
+        
 		// Presenting the what's new view controller.
 		[self.window.rootViewController presentViewController:vc animated:NO completion:nil];
 //		vc.view.superview.frame = CGRectMake(40, 40, 320, 568);

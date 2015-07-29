@@ -66,6 +66,10 @@ typedef NS_ENUM(NSUInteger, MTZWhatsNewViewControllerStyle) {
 /// @discussion The default is @c NSLocalizedString(@"Get Started", nil).
 @property (nonatomic, copy) NSString *dismissButtonTitle;
 
+/// The background color of the dismiss button.
+/// @discussion The default is @c [UIColor whiteColor]
+@property (nonatomic, copy) UIColor *dismissButtonBackgroundColor;
+
 
 #pragma mark - Responding to Style Change
 

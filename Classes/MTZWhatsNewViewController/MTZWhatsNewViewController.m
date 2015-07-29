@@ -24,7 +24,7 @@
 @property (strong, nonatomic) UIButton *dismissButton;
 
 ///	The background behind the dismiss button.
-@property (strong, nonatomic) UIToolbar *buttonBackground;
+@property (strong, nonatomic) UIView *buttonBackground;
 
 @end
 
@@ -80,8 +80,9 @@
 	self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
 	[self.view addConstraints:[NSLayoutConstraint constraintsToFillToSuperview:self.contentView]];
 	
-	// Dismiss Button.
-	self.buttonBackground = [[UIToolbar alloc] init];
+    // Dismiss Button.
+    self.buttonBackground = [[UIView alloc] init];
+    self.dismissButtonBackgroundColor = [UIColor whiteColor];
 	[self.view addSubview:self.buttonBackground];
 	self.buttonBackground.translatesAutoresizingMaskIntoConstraints = NO;
 	[self.view addConstraints:[NSLayoutConstraint constraintsToStickView:self.buttonBackground toEdges:UIRectEdgeLeft|UIRectEdgeBottom|UIRectEdgeRight]];
@@ -104,7 +105,8 @@
 
 - (void)reloadButtonHeight
 {
-	UIFont *buttonFont = [self shouldUseLargeButton] ? [UIFont fontWithName:@"HelveticaNeue-Light" size:29.0f] : [UIFont fontWithName:@"HelveticaNeue" size:18.0f];
+	UIFont *buttonFont = [self shouldUseLargeButton] ? [UIFont fontWithName:@"Lato-Light" size:29.0f] : [UIFont fontWithName:@"Lato-Regular" size:18.0f];
+    NSLog(@"XXX: Button font: %@", buttonFont);
 	self.dismissButton.titleLabel.font = buttonFont;
 	
 	CGFloat buttonHeight = [self shouldUseLargeButton] ? 82.0f : 50.0f;
@@ -178,6 +180,12 @@
 {
 	_dismissButtonTitle = dismissButtonText;
 	[self.dismissButton setTitle:_dismissButtonTitle forState:UIControlStateNormal];
+}
+
+- (void)setDismissButtonBackgroundColor:(UIColor *)dismissButtonBackgroundColor
+{
+    _dismissButtonBackgroundColor = dismissButtonBackgroundColor;
+    self.buttonBackground.backgroundColor = dismissButtonBackgroundColor;
 }
 
 - (void)setContentInset:(UIEdgeInsets)contentInset
