@@ -247,7 +247,7 @@ static const NSString *kIconName = @"icon";
 	
 	// Larger font and divider.
 	if ( [self shouldUseGridLayout] ) {
-		label.font = [UIFont fontWithName:@"Lato-Hairline" size:62];
+		label.font = [UIFont fontWithName:@"Lato-Light" size:32];
 		label.translatesAutoresizingMaskIntoConstraints = NO;
 		[view addConstraints:[NSLayoutConstraint constraintsToStickView:label toEdges:UIRectEdgeLeft|UIRectEdgeTop|UIRectEdgeRight]];
 		
@@ -261,8 +261,14 @@ static const NSString *kIconName = @"icon";
 		[view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[label][divider]" options:NSLayoutFormatDirectionLeftToRight metrics:nil views:@{@"label": label, @"divider": divider}]];
 		divider.backgroundColor = [[self contentColor] colorWithAlphaComponent:0.75f];
 	} else {
-		label.font = [UIFont fontWithName:@"Lato-Light" size:30];
+		label.font = [UIFont fontWithName:@"Lato-Light" size:32];
 	}
+    
+    label.attributedText = [[NSAttributedString alloc]
+                            initWithString:label.text attributes:@{
+                                                                   NSFontAttributeName: label.font,
+                                                                   NSKernAttributeName: @2.56f
+                                                                   }];
 	
 	return view;
 }

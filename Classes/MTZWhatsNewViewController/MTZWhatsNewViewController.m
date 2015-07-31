@@ -100,13 +100,12 @@
 	self.backgroundGradientBottomColor = [UIColor whiteColor];
 	_style = MTZWhatsNewViewControllerStyleDarkContent;
 	_automaticallySetStyle = YES;
-	self.dismissButtonTitle = NSLocalizedStringFromTable(@"Get Started", @"WhatsNew", nil);
+	self.dismissButtonTitle = [NSLocalizedStringFromTable(@"Get Started", @"WhatsNew", nil) uppercaseString];
 }
 
 - (void)reloadButtonHeight
 {
-	UIFont *buttonFont = [self shouldUseLargeButton] ? [UIFont fontWithName:@"Lato-Light" size:29.0f] : [UIFont fontWithName:@"Lato-Regular" size:18.0f];
-    NSLog(@"XXX: Button font: %@", buttonFont);
+    UIFont *buttonFont = [UIFont fontWithName:@"Lato-Bold" size:16.0f];
 	self.dismissButton.titleLabel.font = buttonFont;
 	
 	CGFloat buttonHeight = [self shouldUseLargeButton] ? 82.0f : 50.0f;
